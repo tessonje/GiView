@@ -16,12 +16,29 @@
 				{
 					navigator.geolocation.getCurrentPosition(function(position)
 					{	
+						
+						function Dist(LatA, LngA, LatB, LngB)
+  						{
+  							rad = function(x) {return x*Math.PI/180;}
+							var R     = 6371;
+  							var dLat  = rad( LatB - LatA );
+  							var dLong = rad( LngB - LngA );
+  							var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(rad(LatA)) * Math.cos(rad(LatB)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+  							var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  							var d = R * c;
+  							return d.toFixed(3);
+						}
+						
+						var pi = 3.141592654;
+						var userLatRad = position.coords.latitude * pi / 180
+						var userLatRad = position.coords.longitude * pi / 180
 						map = new google.maps.Map(document.getElementById("map_canvas"),
 						{
     						zoom: 15,
         					center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         					mapTypeId: google.maps.MapTypeId.ROADMAP
       					});
+						
 						var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 						var myMarker = new google.maps.Marker(
 						{
@@ -39,9 +56,13 @@
 						{
 							myInfoWindow.open(map,myMarker);
 						});
-
+						
+						var fnacLat =  50.6360722;
+						var fnacLon = 3.0647608;
+						var user_fnac = dist(position.coords.latitude, position.coords.longitude, 50.6360722, 3.0647608);
+						alert (user_fnac);
 						var fnacImage = new google.maps.MarkerImage('http://t1.gstatic.com/images?q=tbn:ANd9GcSA9L99C3PR-5UBzPYAOq-nsuD1ddyWzuGN07pJlQCgOOG8heXOjPoKIg');
-						var fnacLatlng = new google.maps.LatLng(50.6360722,3.0647608);
+						var fnacLatlng = new google.maps.LatLng(fnacLat,fnacLon);
 						var fnacMarker = new google.maps.Marker(
 						{
 							position: fnacLatlng, 
@@ -60,8 +81,10 @@
 							fnacInfoWindow.open(map,fnacMarker);
 						});
 						
+						var furetLan = 50.6366642;
+						var furetLon = 3.0631837;
 						var furetImage = new google.maps.MarkerImage('https://pbs.twimg.com/profile_images/195765038/logo_furet_normal.png');
-						var furetLatlng = new google.maps.LatLng(50.6366642,3.0631837);
+						var furetLatlng = new google.maps.LatLng(furetLan,furetLon);
 						var furetMarker = new google.maps.Marker(
 						{
 							position: furetLatlng, 
@@ -80,8 +103,10 @@
 							furetInfoWindow.open(map,furetMarker);
 						});
 						
+						var epitechLan = 50.6351672;
+						var epitechLon = 3.0619123;
 						var epitechImage = new google.maps.MarkerImage('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/s48x48/373013_110720126115_1854659391_q.jpg');
-						var epitechLatlng = new google.maps.LatLng(50.6351672,3.0619123);
+						var epitechLatlng = new google.maps.LatLng(epitechLan,epitechLon);
 						var epitechMarker = new google.maps.Marker(
 						{
 							position: epitechLatlng, 
