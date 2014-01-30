@@ -18,11 +18,18 @@
 					{	
 						map = new google.maps.Map(document.getElementById("map_canvas"),
 						{
-    						zoom: 25,
+    						zoom: 20,
         					center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         					mapTypeId: google.maps.MapTypeId.ROADMAP
       					});
-					});
+						var marker = new google.maps.Marker({ position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), map: map, title: 'Click Me ' + 0 });
+						(function(marker, i) 
+						{
+							// add click event
+							google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: 'Hello, World!!' }); infowindow.open(map, marker); }); 
+						})(marker, i);
+					})(); 
+				//	});
 				}
 				else
 					alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
