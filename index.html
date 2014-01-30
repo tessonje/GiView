@@ -22,7 +22,7 @@
         					center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         					mapTypeId: google.maps.MapTypeId.ROADMAP
       					});
-						var marker = new google.maps.Marker({ position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), map: map, title: 'Click Me ' + 0 });
+						var marker = new google.maps.Marker({ position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), map: map, title: 'Click Me ' + 1 });
 						(function(marker, i) 
 						{
 							// add click event
@@ -45,7 +45,7 @@
 			<div data-role="content">	
 				<ul data-role="listview">
 					<li><a href="#map">map</a></li>
-				</ul>		
+				</ul>
 			</div>
 			<div data-role="footer">
 				<h4>Giview</h4>
@@ -55,11 +55,11 @@
 			<div data-role="header">
 				<h1>map</h1>
 			</div>
-			<div data-role="content">	
-				<div id="map_canvas"></div>		
+			<div data-role="content">
+				<div id="map_canvas"></div>
 			</div>
 			<div data-role="footer">
-				<h4><a href="#page">return</a></h4>
+				<a href="#page"><h4>return</h4></a>
 			</div>
 		</div>    
     </body>
