@@ -22,12 +22,20 @@
         					center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         					mapTypeId: google.maps.MapTypeId.ROADMAP
       					});
-						var marker = new google.maps.Marker({ position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), map: map, title: 'Click Me ' + 1 });
+						var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+						var myMarker = new google.maps.Marker(
+						{
+							position: myLatlng,
+							map: map,
+							title: "ma position"
+						});
+						
+					/*	var marker = new google.maps.Marker({ position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), map: map, title: 'Click Me ' + 1 });
 						(function(marker, i) 
 						{
 							// add click event
 							google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: 'Hello, World!!' }); infowindow.open(map, marker); }); 
-						})(marker, i);
+						})(marker, i);*/
 					})(); 
 				//	});
 				}
