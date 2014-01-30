@@ -22,16 +22,17 @@
         					center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
         					mapTypeId: google.maps.MapTypeId.ROADMAP
       					});
-						var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+						/*var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 						var myMarker = new google.maps.Marker(
 						{
 							position: myLatlng,
 							map: map,
 							title: "ma position"
-						});
+						});*/
 						//var fnacImage = new google.maps.MarkerImage('images/fnac.png');
 						var fnacLatlng = new google.maps.LatLng(50.6360722,3.0647608);
-						var fnacMarker = new google.maps.Marker({
+						var fnacMarker = new google.maps.Marker(
+						{
 							position: fnacLatlng, 
 							map: map,
 							//icon: fnacImage,
@@ -40,7 +41,8 @@
 						
 						//var furetImage = new google.maps.MarkerImage('images/furet.png');
 						var furetLatlng = new google.maps.LatLng(50.6366642,3.0631837);
-						var furetMarker = new google.maps.Marker({
+						var furetMarker = new google.maps.Marker(
+						{
 							position: furetLatlng, 
 							map: map,
 							//icon: furetImage,
@@ -49,7 +51,8 @@
 						
 						//var epitechImage = new google.maps.MarkerImage('images/epitech.jpg');
 						var epitechLatlng = new google.maps.LatLng(50.6351672,3.0619123);
-						var epitechMarker = new google.maps.Marker({
+						var epitechMarker = new google.maps.Marker(
+						{
 							position: epitechLatlng, 
 							map: map,
 							//icon: epitechImage,
