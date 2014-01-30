@@ -37,7 +37,30 @@
  			}
 		</script>
     </head> 
-    <body onload="initialize()"> 
-        <div id="map_canvas"></div>
+    <body onload="initialize()">
+   		<div data-role="page" id="page">
+			<div data-role="header">
+				<h1>Page One</h1>
+			</div>
+			<div data-role="content">	
+				<ul data-role="listview">
+					<li><a href="#map">map</a></li>
+				</ul>		
+			</div>
+			<div data-role="footer">
+				<h4>Giview</h4>
+			</div>
+		</div>
+		<div data-role="page" id="map">
+			<div data-role="header">
+				<h1>map</h1>
+			</div>
+			<div data-role="content">	
+				<div id="map_canvas"></div>		
+			</div>
+			<div data-role="footer">
+				<h4><a href="#page">return</a></h4>
+			</div>
+		</div>    
     </body>
 </html>
