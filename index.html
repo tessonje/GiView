@@ -29,7 +29,20 @@
 							map: map,
 							title: "ma position"
 						});
-						
+						// Options de la fenêtre
+						var myWindowOptions = 
+						{
+							content:
+								'<h6>Cinéma Pathé Bellecour</h6>'+
+								'<p><a href="http://www.cinemasgaumontpathe.com/cinemas/cinema-pathe-lyon-bellecour/" title="Site officiel">Visiter le site officiel</a></p>'
+						};
+						// Création de la fenêtre
+						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
+						// Affichage de la fenêtre au click sur le marker
+						google.maps.event.addListener(myMarker, 'click', function() 
+						{
+							myInfoWindow.open(myMap,myMarker);
+						});
 					/*	var marker = new google.maps.Marker({ position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), map: map, title: 'Click Me ' + 1 });
 						(function(marker, i) 
 						{
