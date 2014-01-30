@@ -65,15 +65,14 @@
 						var myWindowOptions = 
 						{
 							content:
-								'<h6>Cinéma Pathé Bellecour</h6>'+
-								'<p><a href="http://www.cinemasgaumontpathe.com/cinemas/cinema-pathe-lyon-bellecour/" title="Site officiel">Visiter le site officiel</a></p>'
+								'it\'s me MARIO'
 						};
 						// Création de la fenêtre
 						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
 						// Affichage de la fenêtre au click sur le marker
 						google.maps.event.addListener(myMarker, 'click', function() 
 						{
-							myInfoWindow.open(myMap,myMarker);
+							myInfoWindow.open(map,myMarker);
 						});
 					})();
 				}
