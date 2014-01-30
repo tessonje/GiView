@@ -29,7 +29,17 @@
 							map: map,
 							title: "ma position"
 						});
-						//var fnacImage = new google.maps.MarkerImage('images/fnac.png');
+						var myWindowOptions = 
+						{
+							content:
+								'it\'s me MARIO'
+						};
+						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
+						google.maps.event.addListener(myMarker, 'click', function() 
+						{
+							myInfoWindow.open(map,myMarker);
+						});
+
 						var fnacImage = new google.maps.MarkerImage('http://t1.gstatic.com/images?q=tbn:ANd9GcSA9L99C3PR-5UBzPYAOq-nsuD1ddyWzuGN07pJlQCgOOG8heXOjPoKIg');
 						var fnacLatlng = new google.maps.LatLng(50.6360722,3.0647608);
 						var fnacMarker = new google.maps.Marker(
@@ -39,8 +49,17 @@
 							icon: fnacImage,
 							title: "fnac Lille"
 						});
+						var myWindowOptions = 
+						{
+							content:
+								'<a href="http://www.fnac.com/">FNAC</a>'
+						};
+						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
+						google.maps.event.addListener(fnacMarker, 'click', function() 
+						{
+							myInfoWindow.open(map,fnacMarker);
+						});
 						
-						//var furetImage = new google.maps.MarkerImage('images/furet.png');
 						var furetImage = new google.maps.MarkerImage('https://pbs.twimg.com/profile_images/195765038/logo_furet_normal.png');
 						var furetLatlng = new google.maps.LatLng(50.6366642,3.0631837);
 						var furetMarker = new google.maps.Marker(
@@ -50,8 +69,17 @@
 							icon: furetImage,
 							title: "furet Lille"
 						});
+						var myWindowOptions = 
+						{
+							content:
+								'<a href="http://www.furet.com/">FNAC</a>'
+						};
+						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
+						google.maps.event.addListener(furetMarker, 'click', function() 
+						{
+							myInfoWindow.open(map,furetMarker);
+						});
 						
-						//var epitechImage = new google.maps.MarkerImage('images/epitech.jpg');
 						var epitechImage = new google.maps.MarkerImage('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/s48x48/373013_110720126115_1854659391_q.jpg');
 						var epitechLatlng = new google.maps.LatLng(50.6351672,3.0619123);
 						var epitechMarker = new google.maps.Marker(
@@ -61,19 +89,17 @@
 							icon: epitechImage,
 							title: "epitech Lille"
 						});
-						// Options de la fenêtre
 						var myWindowOptions = 
 						{
 							content:
-								'it\'s me MARIO'
+								'<a href="http://www.epitech.eu/">FNAC</a>'
 						};
-						// Création de la fenêtre
 						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
-						// Affichage de la fenêtre au click sur le marker
-						google.maps.event.addListener(myMarker, 'click', function() 
+						google.maps.event.addListener(epitechMarker, 'click', function() 
 						{
-							myInfoWindow.open(map,myMarker);
+							myInfoWindow.open(map,epitechMarker);
 						});
+						
 					})();
 				}
 				else
