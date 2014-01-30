@@ -49,15 +49,15 @@
 							icon: fnacImage,
 							title: "fnac Lille"
 						});
-						var myWindowOptions = 
+						var fnacWindowOptions = 
 						{
 							content:
 								'<a href="http://www.fnac.com/">FNAC</a>'
 						};
-						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
+						var fnacInfoWindow = new google.maps.InfoWindow(fnacWindowOptions);
 						google.maps.event.addListener(fnacMarker, 'click', function() 
 						{
-							myInfoWindow.open(map,fnacMarker);
+							fnacInfoWindow.open(map,fnacMarker);
 						});
 						
 						var furetImage = new google.maps.MarkerImage('https://pbs.twimg.com/profile_images/195765038/logo_furet_normal.png');
@@ -69,15 +69,15 @@
 							icon: furetImage,
 							title: "furet Lille"
 						});
-						var myWindowOptions = 
+						var furetWindowOptions = 
 						{
 							content:
-								'<a href="http://www.furet.com/">FNAC</a>'
+								'<a href="http://www.furet.com/">FURET</a>'
 						};
-						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
+						var furetInfoWindow = new google.maps.InfoWindow(furetWindowOptions);
 						google.maps.event.addListener(furetMarker, 'click', function() 
 						{
-							myInfoWindow.open(map,furetMarker);
+							furetInfoWindow.open(map,furetMarker);
 						});
 						
 						var epitechImage = new google.maps.MarkerImage('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/s48x48/373013_110720126115_1854659391_q.jpg');
@@ -89,15 +89,15 @@
 							icon: epitechImage,
 							title: "epitech Lille"
 						});
-						var myWindowOptions = 
+						var epitechWindowOptions = 
 						{
 							content:
-								'<a href="http://www.epitech.eu/">FNAC</a>'
+								'<a href="http://www.epitech.eu/">EPITECH</a>'
 						};
-						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
+						var epitechInfoWindow = new google.maps.InfoWindow(epitechWindowOptions);
 						google.maps.event.addListener(epitechMarker, 'click', function() 
 						{
-							myInfoWindow.open(map,epitechMarker);
+							epitechInfoWindow.open(map,epitechMarker);
 						});
 						
 					})();
