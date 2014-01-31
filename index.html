@@ -36,7 +36,6 @@
 							var d = R * c;
 							return(d.toFixed(3));
 						}
-						alert(Dist(50.6366642, 3.0631837, 50.6351672, 3.0619123));
 						map = new google.maps.Map(document.getElementById("map_canvas"),
 						{
     						zoom: 15,
@@ -79,7 +78,7 @@
 						var fnacWindowOptions = 
 						{
 							content:
-								'<a href="http://www.fnac.com/"><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcSA9L99C3PR-5UBzPYAOq-nsuD1ddyWzuGN07pJlQCgOOG8heXOjPoKIg"</a></br><p>Adresse : 20 Rue Saint-Nicolas, 59800 lille</br>Téléphone :0 892 35 04 05</p>'
+								'<a href="http://www.fnac.com/"><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcSA9L99C3PR-5UBzPYAOq-nsuD1ddyWzuGN07pJlQCgOOG8heXOjPoKIg"</a></br><p>Adresse : 20 Rue Saint-Nicolas, 59800 lille</br>Téléphone :0 892 35 04 05</p><p>Distance : '+Dist(position.coords.latitude,position.coords.longitude,fnacLat, fnacLon) +'</p>'
 								//'<a href="infofnac.html">FNAC</a>'
 						};
 						var fnacInfoWindow = new google.maps.InfoWindow(fnacWindowOptions);
