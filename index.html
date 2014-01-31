@@ -17,17 +17,26 @@
 					navigator.geolocation.getCurrentPosition(function(position)
 					{	
 						
-						function Dist(LatA, LngA, LatB, LngB)
-  						{
-  							rad = function(x) {return x*Math.PI/180;}
-							var R     = 6371;
-  							var dLat  = rad( LatB - LatA );
-  							var dLong = rad( LngB - LngA );
-  							var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(rad(LatA)) * Math.cos(rad(LatB)) * Math.sin(dLong/2) * Math.sin(dLong/2);
-  							var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-  							var d = R * c;
-  							return d.toFixed(3);
+						if (typeof(Number.prototype.toRad) === "undefined")
+						{
+	  						Number.prototype.toRad = function()
+							{
+	 						   return this * Math.PI / 180;
+	 						}
 						}
+						function Dist(lat1, lon1, lat2, lon2)
+						{
+							var R = 6371; // km
+							var dLat = (lat2-lat1).toRad();
+							var dLon = (lon2-lon1).toRad();
+							var lat1 = lat1.toRad();
+							var lat2 = lat2.toRad();
+							var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+							var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+							var d = R * c;
+							return(d.toFixed(3));
+						}
+						alert(Dist(50.6366642, 3.0631837, 50.6351672, 3.0619123));
 						map = new google.maps.Map(document.getElementById("map_canvas"),
 						{
     						zoom: 15,
@@ -141,7 +150,7 @@
 			<div data-role="content">	
 				<ul data-role="listview">
 					<li><a href="#map">map</a></li>
-                    <li><a href="test.html">test</a></li>
+                    <!--<li><a href="test.html">test</a></li>-->
 				</ul>
 			</div>
 			<div data-role="footer">
