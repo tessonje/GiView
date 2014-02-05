@@ -44,7 +44,7 @@
         					mapTypeId: google.maps.MapTypeId.ROADMAP
       					});
 						
-						var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+						/*var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 						var myMarker = new google.maps.Marker(
 						{
 							position: myLatlng,
@@ -131,9 +131,61 @@
 						google.maps.event.addListener(epitechMarker, 'click', function() 
 						{
 							epitechInfoWindow.open(map,epitechMarker);
-						});
-						
-					})();
+						});*/
+						var location = [
+					{
+						lat:50.6355677,
+						lon:3.0620463,
+						title:'Rihour',
+						flat: true,
+						content:'<div id="siteNotice">'+
+						'</div>'+
+						'<img src="img/rihour.jpg" height=50 width=30 />'+
+						'<p>La Place Rihour à Lille</p>',
+						img:  new google.maps.MarkerImage('img/rihour.jpg', null, null, null, new google.maps.Size(21,30))
+					},
+					{
+						lat:50.6191442,
+						lon:3.0515611,
+						title:'Wazemmes',
+						flat: true,
+						content:'<div id="siteNotice">'+
+						'</div>'+
+						'<img src="img/Wazemmes.jpg" height=50 width=30 />'+
+						'<p>Le Serpent de Wazemmes à Lille</p>',
+						img:  new google.maps.MarkerImage('img/Wazemmes.jpg', null, null, null, new google.maps.Size(21,30))
+						//img:  new google.maps.MarkerImage('img/rihour.jpg')	
+					},
+					{
+						lat:50.6318736,
+						lon:3.0534811,
+						title:'Atomics',
+						flat: true,
+						content:'<div id="siteNotice">'+
+						'</div>'+
+						'<img src="img/atomic.jpeg" height=50 width=30 />'+
+						'<p>Bar sur Solferino à Lille</p>',
+						img:  new google.maps.MarkerImage('img/atomic.jpeg', null, null, null, new google.maps.Size(21,30))
+						//img:  new google.maps.MarkerImage('img/rihour.jpg')
+					}
+					];
+					
+					for (var i = 0; i < location.length; i++)
+					{ 
+						// init markers 
+						var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
+
+						// process multiple info windows
+						(function(marker, i) 
+						{
+							// add click event
+							google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: location[i].content });
+						 infowindow.open(map, marker);
+					 });
+					  })(marker, i);
+					   } })(); 
+					//}); 
+					//})();
 				}
 				else
 					alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
