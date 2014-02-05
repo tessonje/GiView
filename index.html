@@ -132,12 +132,20 @@
 						{
 							epitechInfoWindow.open(map,epitechMarker);
 						});*/
-						var location = [
+					var location = [
+					{
+						lat:position.coords.latitude,
+						lon:position.coords.longitude,
+						title:'Ma position',
+						//flat: true,
+						content:'<p>It\'s me mario!!!</p>'
+						//img:  new google.maps.MarkerImage('img/rihour.jpg', null, null, null, new google.maps.Size(21,30))
+					},
 					{
 						lat:50.6355677,
 						lon:3.0620463,
 						title:'Rihour',
-						flat: true,
+						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/rihour.jpg" height=50 width=30 />'+
@@ -148,7 +156,7 @@
 						lat:50.6191442,
 						lon:3.0515611,
 						title:'Wazemmes',
-						flat: true,
+						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/Wazemmes.jpg" height=50 width=30 />'+
@@ -160,10 +168,10 @@
 						lat:50.6318736,
 						lon:3.0534811,
 						title:'Atomics',
-						flat: true,
+						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
-						'<img src="img/atomic.jpeg" height=50 width=30 />'+
+						'<img src="img/atomic.jpg" height=50 width=30 />'+
 						'<p>Bar sur Solferino à Lille</p>',
 						img:  new google.maps.MarkerImage('img/atomic.jpg', null, null, null, new google.maps.Size(21,30))
 						//img:  new google.maps.MarkerImage('img/rihour.jpg')
