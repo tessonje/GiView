@@ -144,12 +144,13 @@
 					{
 						lat:50.6355677,
 						lon:3.0620463,
+						distance: Dist(position.coords.latitude,position.coords.longitude, lat, lon),
 						title:'Rihour',
 						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/rihour.jpg" height=50 width=30 />'+
-						'<p>La Place Rihour à Lille</p>',
+						'<p>La Place Rihour à Lille</p><p>Distance: ' + distance + '</p>',
 						img:  new google.maps.MarkerImage('img/rihour.jpg', null, null, null, new google.maps.Size(21,30))
 					},
 					{
