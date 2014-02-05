@@ -184,7 +184,7 @@
 					for (var i = 0; i < location.length; i++)
 					{ 
 						// init markers
-						if (location[i].distance < 5)
+						if (i > 0 && location[i].distance < 5)
 						{ 
 							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
 
