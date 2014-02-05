@@ -150,30 +150,32 @@
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/rihour.jpg" height=50 width=30 />'+
-						'<p>La Place Rihour à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6355677, 3.0620463) + '</p>',
+						'<p>La Place Rihour à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6355677, 3.0620463) + 'km</p>',
 						img:  new google.maps.MarkerImage('img/rihour.jpg', null, null, null, new google.maps.Size(21,30))
 					},
 					{
 						lat:50.6191442,
 						lon:3.0515611,
+						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6191442, 3.0515611),
 						title:'Wazemmes',
 						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/Wazemmes.jpg" height=50 width=30 />'+
-						'<p>Le Serpent de Wazemmes à Lille</p>',
+						'<p>Le Serpent de Wazemmes à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6191442, 3.0515611) + 'km</p>',
 						img:  new google.maps.MarkerImage('img/Wazemmes.jpg', null, null, null, new google.maps.Size(21,30))
 						//img:  new google.maps.MarkerImage('img/rihour.jpg')	
 					},
 					{
 						lat:50.6318736,
 						lon:3.0534811,
+						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6318736, 3.0534811),
 						title:'Atomics',
 						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/atomic.jpg" height=50 width=30 />'+
-						'<p>Bar sur Solferino à Lille</p>',
+						'<p>Bar sur Solferino à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6318736, 3.0534811) + 'km</p>',
 						img:  new google.maps.MarkerImage('img/atomic.jpg', null, null, null, new google.maps.Size(21,30))
 						//img:  new google.maps.MarkerImage('img/rihour.jpg')
 					}
@@ -181,17 +183,19 @@
 					
 					for (var i = 0; i < location.length; i++)
 					{ 
-						// init markers 
-						var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
+						// init markers
+						if (location[i].distance < 5)
+						{ 
+							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
 
-						// process multiple info windows
-						(function(marker, i) 
-						{
-							// add click event
-							google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: location[i].content });
-						 infowindow.open(map, marker);
+							// process multiple info windows
+							(function(marker, i) 
+							{
+								// add click event
+								google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: location[i].content });
+							 infowindow.open(map, marker);
 					 });
-					  })(marker, i);
+					  })(marker, i);}
 					   } })(); 
 					//}); 
 					//})();
