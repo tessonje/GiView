@@ -139,7 +139,6 @@
 						title:'Ma position',
 						//flat: true,
 						content:'<p>It\'s me mario!!!</p>'
-						//img:  new google.maps.MarkerImage('img/rihour.jpg', null, null, null, new google.maps.Size(21,30))
 					},
 					{
 						lat:50.6355677,
@@ -152,6 +151,18 @@
 						'<img src="img/rihour.jpg" height=50 width=30 />'+
 						'<p>La Place Rihour à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6355677, 3.0620463) + 'km</p>',
 						img:  new google.maps.MarkerImage('img/rihour.jpg', null, null, null, new google.maps.Size(21,30))
+					},
+					{
+						lat:50.6360722,
+						lon:3.0647608,
+						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6360722, 3.0647608),
+						title:'Fnac',
+						//flat: true,
+						content:'<div id="siteNotice">'+
+						'</div>'+
+						'<img src="img/fnac.png" height=50 width=30 />'+
+						'<p>La Fnac à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6360722, 3.0647608) + 'km</p>',
+						img:  new google.maps.MarkerImage('img/fnac.png', null, null, null, new google.maps.Size(21,30))
 					},
 					{
 						lat:50.6191442,
@@ -184,8 +195,8 @@
 					for (var i = 0; i < location.length; i++)
 					{ 
 						// init markers
-						if (i > 0 && location[i].distance < 5)
-						{ 
+						//if (i > 0 && location[i].distance < 5)
+						//{ 
 							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
 
 							// process multiple info windows
@@ -195,7 +206,7 @@
 								google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: location[i].content });
 							 infowindow.open(map, marker);
 					 });
-					  })(marker, i);}
+					  })(marker, i);//}
 					   } })(); 
 					//}); 
 					//})();
