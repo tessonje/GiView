@@ -165,6 +165,18 @@
 						img:  new google.maps.MarkerImage('img/fnac.png', null, null, null, new google.maps.Size(21,30))
 					},
 					{
+						lat:50.6366642,
+						lon:3.0631837,
+						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6366642, 3.0631837),
+						title:'Furet',
+						//flat: true,
+						content:'<div id="siteNotice">'+
+						'</div>'+
+						'<img src="img/furet.png" height=50 width=30 />'+
+						'<p>La Fnac à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6366642, 3.0631837) + 'km</p>',
+						img:  new google.maps.MarkerImage('img/furet.png', null, null, null, new google.maps.Size(21,30))
+					},
+					{
 						lat:50.6191442,
 						lon:3.0515611,
 						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6191442, 3.0515611),
