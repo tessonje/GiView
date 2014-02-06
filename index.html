@@ -150,8 +150,6 @@
 					for (var i = 0; i < location.length; i++)
 					{ 
 						// init markers
-						if (id_type != 0)
-						{
 						if (i == 0 || location[i].type == id_type)
 						{ 
 							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
@@ -163,7 +161,7 @@
 								google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: location[i].content });
 							 infowindow.open(map, marker);
 					 });
-					  })(marker, i);}}
+					  })(marker, i);}
 					   } })(); 
 					//}); 
 					//})();
