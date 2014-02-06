@@ -40,112 +40,21 @@
 						{
     						zoom: 15,
         					center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-							//center: new google.maps.LatLng(50.6360722, 3.0647608),
         					mapTypeId: google.maps.MapTypeId.ROADMAP
       					});
-						
-						/*var myLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-						var myMarker = new google.maps.Marker(
-						{
-							position: myLatlng,
-							map: map,
-							title: "ma position"
-						});
-						var myWindowOptions = 
-						{
-							content:
-								'it\'s me MARIO'
-						};
-						var myInfoWindow = new google.maps.InfoWindow(myWindowOptions);
-						google.maps.event.addListener(myMarker, 'click', function() 
-						{
-							myInfoWindow.open(map,myMarker);
-						});
-						
-						var fnacLat =  50.6360722;
-						var fnacLon = 3.0647608;
-						//var user_fnac = dist(position.coords.latitude, position.coords.longitude, 50.6360722, 3.0647608);
-						//alert("user_fnac");
-						var fnacImage = new google.maps.MarkerImage('http://t1.gstatic.com/images?q=tbn:ANd9GcSA9L99C3PR-5UBzPYAOq-nsuD1ddyWzuGN07pJlQCgOOG8heXOjPoKIg');
-						var fnacLatlng = new google.maps.LatLng(fnacLat,fnacLon);
-						var fnacMarker = new google.maps.Marker(
-						{
-							position: fnacLatlng, 
-							map: map,
-							icon: fnacImage,
-							title: "fnac Lille"
-						});
-						var fnacWindowOptions = 
-						{
-							content:
-								'<a href="http://www.fnac.com/"><img src="http://t1.gstatic.com/images?q=tbn:ANd9GcSA9L99C3PR-5UBzPYAOq-nsuD1ddyWzuGN07pJlQCgOOG8heXOjPoKIg"</a></br><p>Adresse : 20 Rue Saint-Nicolas, 59800 lille</br>Téléphone :0 892 35 04 05</p><p>Distance : '+Dist(position.coords.latitude,position.coords.longitude,fnacLat, fnacLon) +' km</p>'
-								//'<a href="infofnac.html">FNAC</a>'
-						};
-						var fnacInfoWindow = new google.maps.InfoWindow(fnacWindowOptions);
-						google.maps.event.addListener(fnacMarker, 'click', function() 
-						{
-							fnacInfoWindow.open(map,fnacMarker);
-						});
-						
-						var furetLat = 50.6366642;
-						var furetLon = 3.0631837;
-						var furetImage = new google.maps.MarkerImage('https://pbs.twimg.com/profile_images/195765038/logo_furet_normal.png');
-						var furetLatlng = new google.maps.LatLng(furetLat,furetLon);
-						var furetMarker = new google.maps.Marker(
-						{
-							position: furetLatlng, 
-							map: map,
-							icon: furetImage,
-							title: "furet Lille"
-						});
-						var furetWindowOptions = 
-						{
-							content:
-								'<a href="http://www.furet.com/"><img src="https://pbs.twimg.com/profile_images/195765038/logo_furet_normal.png"</a></br><p>Adresse : 15 Place du Général de Gaulle, 59800 Lille</br>Téléphone :03 20 78 43 43</p><p>Distance : '+Dist(position.coords.latitude,position.coords.longitude,furetLat, furetLon) +' km</p>'
-								//'<a href="infofuret.html">FURET</a>'
-						};
-						var furetInfoWindow = new google.maps.InfoWindow(furetWindowOptions);
-						google.maps.event.addListener(furetMarker, 'click', function() 
-						{
-							furetInfoWindow.open(map,furetMarker);
-						});
-						
-						var epitechLat = 50.6351672;
-						var epitechLon = 3.0619123;
-						var epitechImage = new google.maps.MarkerImage('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/s48x48/373013_110720126115_1854659391_q.jpg');
-						var epitechLatlng = new google.maps.LatLng(epitechLat,epitechLon);
-						var epitechMarker = new google.maps.Marker(
-						{
-							position: epitechLatlng, 
-							map: map,
-							icon: epitechImage,
-							title: "epitech Lille"
-						});
-						var epitechWindowOptions = 
-						{
-							content:
-								'<a href="http://www.epitech.eu/"><img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/s48x48/373013_110720126115_1854659391_q.jpg"</a></br><p>Adresse : 5-9, rue du Palais Rihour, 59000 Lille</p><p>Distance : '+Dist(position.coords.latitude,position.coords.longitude,epitechLat, epitechLon) +' km</p>'
-								//'<a href="infoepitech.html">EPITECH</a>'
-						};
-						var epitechInfoWindow = new google.maps.InfoWindow(epitechWindowOptions);
-						google.maps.event.addListener(epitechMarker, 'click', function() 
-						{
-							epitechInfoWindow.open(map,epitechMarker);
-						});*/
 					var location = [
 					{
 						lat:position.coords.latitude,
 						lon:position.coords.longitude,
 						title:'Ma position',
-						//flat: true,
 						content:'<p>It\'s me mario!!!</p>'
 					},
 					{
 						lat:50.6355677,
 						lon:3.0620463,
 						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6355677, 3.0620463),
+						type:3,
 						title:'Rihour',
-						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/rihour.jpg" height=50 width=30 />'+
@@ -156,8 +65,8 @@
 						lat:50.6360722,
 						lon:3.0647608,
 						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6360722, 3.0647608),
+						type:4,
 						title:'Fnac',
-						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/fnac.png" height=50 width=30 />'+
@@ -168,39 +77,49 @@
 						lat:50.6366642,
 						lon:3.0631837,
 						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6366642, 3.0631837),
+						type:4,
 						title:'Furet',
-						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/furet.png" height=50 width=30 />'+
-						'<p>La Fnac à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6366642, 3.0631837) + 'km</p>',
+						'<p>Le Furet à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6366642, 3.0631837) + 'km</p>',
 						img:  new google.maps.MarkerImage('img/furet.png', null, null, null, new google.maps.Size(21,30))
 					},
 					{
 						lat:50.6191442,
 						lon:3.0515611,
 						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6191442, 3.0515611),
+						type:3,
 						title:'Wazemmes',
-						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/Wazemmes.jpg" height=50 width=30 />'+
 						'<p>Le Serpent de Wazemmes à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6191442, 3.0515611) + 'km</p>',
 						img:  new google.maps.MarkerImage('img/Wazemmes.jpg', null, null, null, new google.maps.Size(21,30))
-						//img:  new google.maps.MarkerImage('img/rihour.jpg')	
+					},
+					{
+						lat:50.6351740,
+						lon:3.0619016,
+						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6351740, 3.0619016),
+						type:2,
+						title:'Epitech',
+						content:'<div id="siteNotice">'+
+						'</div>'+
+						'<img src="img/epitech.jpg" height=50 width=30 />'+
+						'<p>L\'ecole Epitech.</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6351740, 3.0619016) + 'km</p>',
+						img:  new google.maps.MarkerImage('img/epitech.jpg', null, null, null, new google.maps.Size(21,30))
 					},
 					{
 						lat:50.6318736,
 						lon:3.0534811,
 						distance: Dist(position.coords.latitude,position.coords.longitude, 50.6318736, 3.0534811),
+						type:1,
 						title:'Atomics',
-						//flat: true,
 						content:'<div id="siteNotice">'+
 						'</div>'+
 						'<img src="img/atomic.jpg" height=50 width=30 />'+
 						'<p>Bar sur Solferino à Lille</p><p>Distance: ' + Dist(position.coords.latitude,position.coords.longitude, 50.6318736, 3.0534811) + 'km</p>',
 						img:  new google.maps.MarkerImage('img/atomic.jpg', null, null, null, new google.maps.Size(21,30))
-						//img:  new google.maps.MarkerImage('img/rihour.jpg')
 					}
 					];
 					
