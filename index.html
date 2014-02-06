@@ -36,42 +36,12 @@
 							var d = R * c;
 							return(d.toFixed(3));
 						}
-						if (id_type == 1)
+						map = new google.maps.Map(document.getElementById("map_canvas"),
 						{
-							map = new google.maps.Map(document.getElementById("map_canvas1"),
-							{
-								zoom: 15,
-								center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-								mapTypeId: google.maps.MapTypeId.ROADMAP
-							});
-						}
-						else if (id_type == 2)
-						{
-							map = new google.maps.Map(document.getElementById("map_canvas2"),
-							{
-								zoom: 15,
-								center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-								mapTypeId: google.maps.MapTypeId.ROADMAP
-							});
-						}
-						else if (id_type == 3)
-						{
-							map = new google.maps.Map(document.getElementById("map_canvas3"),
-							{
-								zoom: 15,
-								center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-								mapTypeId: google.maps.MapTypeId.ROADMAP
-							});
-						}
-						else if (id_type == 4)
-						{
-							map = new google.maps.Map(document.getElementById("map_canvas4"),
-							{
-								zoom: 15,
-								center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-								mapTypeId: google.maps.MapTypeId.ROADMAP
-							});
-						}
+							zoom: 15,
+							center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+							mapTypeId: google.maps.MapTypeId.ROADMAP
+						});
 					var location = [
 					{
 						lat:position.coords.latitude,
@@ -180,8 +150,8 @@
 					for (var i = 0; i < location.length; i++)
 					{ 
 						// init markers
-						if (i == 0 || location[i].type == id_type)
-						{ 
+						//if (i == 0 || location[i].type == id_type)
+						//{ 
 							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
 
 							// process multiple info windows
@@ -191,7 +161,7 @@
 								google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: location[i].content });
 							 infowindow.open(map, marker);
 					 });
-					  })(marker, i);}
+					  })(marker, i);//}
 					   } })(); 
 					//}); 
 					//})();
@@ -239,7 +209,7 @@
 				<h1>bar</h1>
 			</div>
 			<div data-role="content">
-				<div id="map_canva1s"></div>
+				<div id="map_canvas"></div>
 			</div>
 			<div data-role="footer">
 				<a href="#page"><h4>return</h4></a>
@@ -251,7 +221,7 @@
 				<h1>ecole</h1>
 			</div>
 			<div data-role="content">
-				<div id="map_canva2s"></div>
+				<div id="map_canvas"></div>
 			</div>
 			<div data-role="footer">
 				<a href="#page"><h4>return</h4></a>
@@ -263,7 +233,7 @@
 				<h1>lieux-dit</h1>
 			</div>
 			<div data-role="content">
-				<div id="map_canvas3"></div>
+				<div id="map_canvas"></div>
 			</div>
 			<div data-role="footer">
 				<a href="#page"><h4>return</h4></a>
@@ -275,7 +245,7 @@
 				<h1>commerce</h1>
 			</div>
 			<div data-role="content">
-				<div id="map_canvas4"></div>
+				<div id="map_canva4"></div>
 			</div>
 			<div data-role="footer">
 				<a href="#page"><h4>return</h4></a>
