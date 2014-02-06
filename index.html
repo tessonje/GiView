@@ -10,7 +10,7 @@
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
         <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />-->
         <script type="text/javascript">
- 			function initialize()
+ 			function initialize(id_type)
 			{
 				if (navigator.geolocation)
 				{
@@ -150,7 +150,7 @@
 					for (var i = 0; i < location.length; i++)
 					{ 
 						// init markers
-						if (i == 0 || location[i].type == 2)
+						if (i == 0 || location[i].type == id_type)
 						{ 
 							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
 
@@ -192,7 +192,7 @@
 			</div>
 		</div>
 		<div data-role="page" id="map">
-        <script> initialize() </script>
+        <script> initialize(1) </script>
 			<div data-role="header">
 				<h1>map</h1>
 			</div>
