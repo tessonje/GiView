@@ -150,7 +150,7 @@
 					for (var i = 0; i < location.length; i++)
 					{ 
 						// init markers
-						if (i > 0 || location[i].type == 2)
+						if (i == 0 || location[i].type == 2)
 						{ 
 							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
 
