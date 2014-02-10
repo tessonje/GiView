@@ -150,6 +150,18 @@
 					for (var i = 0; i < location.length; i++)
 					{ 
 						// init markers
+						if (id_type == 0)
+						{ 
+							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
+
+							// process multiple info windows
+							(function(marker, i) 
+							{
+								// add click event
+								google.maps.event.addListener(marker, 'click', function() { infowindow = new google.maps.InfoWindow({ content: location[i].content });
+							 infowindow.open(map, marker);
+					 });
+					  })(marker, i);}
 						if (i == 0 || location[i].type == id_type)
 						{ 
 							var marker = new google.maps.Marker({ position: new google.maps.LatLng(location[i].lat, location[i].lon), map: map, title: location[i].title, icon: location[i].img, flat: true});
@@ -176,15 +188,15 @@
     <body>
    		<div data-role="page" id="page">
 			<div data-role="header">
-				<h1>Page One</h1>
+				<h1>GiView</h1>
 			</div>
 			<div data-role="content">	
 				<ul data-role="listview">
-					<!--<li><a href="#map" onClick="initialize()">map</a></li>-->
-                    <li><a href="#map" onClick="initialize(1)">bar</a></li>
-                    <li><a href="#map" onClick="initialize(2)">ecole</a></li>
+					<li><a href="#map" onClick="initialize(0)">map</a></li>
+                    <li><a href="#map" onClick="initialize(1)">bars</a></li>
+                    <li><a href="#map" onClick="initialize(2)">ecoles</a></li>
                     <li><a href="#map" onClick="initialize(3)">lieux-dit</a></li>
-                    <li><a href="#map" onClick="initialize(4)">commerce</a></li>
+                    <li><a href="#map" onClick="initialize(4)">commerces</a></li>
 				</ul>
 			</div>
 			<div data-role="footer">
